@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./services/user
+      dockerfile: Dockerfile
+    container_name: user-service
+    ports:
+      - "3000:3000"
+    networks:
+      - hunter_network
+
+  listing:
+    build:
+      context: ./services/listing
+      dockerfile: Dockerfile
+    container_name: listing-service
+    ports:
+      - "3002:3000"
+    networks:
+      - hunter_network
+
+  reservation:
+    build:
+      context: ./services/reservation
+      dockerfile: Dockerfile
+    container_name: reservation-service
+    ports:
+      - "3003:3000"
+    networks:
+      - hunter_network
+
+  messaging:
+    build:
+      context: ./services/messaging
+      dockerfile: Dockerfile
+    container_name: messaging-service
+    ports:
+      - "3004:3000"
+    networks:
+      - hunter_network
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    ports:
+      - "3005:3000" # Assuming gateway listens on port 3000 and we want to expose it on port 80
+    networks:
+      - hunter_network
+
+networks:
+  hunter_network:
+    driver: bridge

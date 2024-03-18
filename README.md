@@ -13,7 +13,7 @@ Hunter is a real estate web application designed to bridge the gap between landl
 
 ## Tech Stack
 - **Backend:** Node.js, Express.js,
-- **Mesaage Broker:** RabbitMQ, RPC,
+- **Mesaage Broker:** RabbitMQ, RPC
 - **Database:** MongoDB
 - **Authentication:** JSON Web Tokens (JWT), Argon2 for password hashing
 - **Validation:** Class-validator for input validation
