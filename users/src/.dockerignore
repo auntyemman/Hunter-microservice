@@ -1,0 +1,7 @@
+# ignore files and folders
+.git
+.cache
+/node_modules
+
+# ignore all markdown
+*md
